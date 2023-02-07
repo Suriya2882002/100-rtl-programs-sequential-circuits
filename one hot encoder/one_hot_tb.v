@@ -1,0 +1,20 @@
+module one_hot_tb();
+
+  parameter BIN_W = 4;
+  parameter ONE_HOT_W = 16;
+  integer i;
+  
+
+  reg [BIN_W-1:0] bin_i;
+  wire [ONE_HOT_W-1:0] one_hot_o;
+
+  one_hot dut(bin_i,one_hot_o);
+initial 
+  begin
+    for( i=0; i<16; i=i+1)
+	begin
+      bin_i = i;
+      #5;
+    end
+	end
+endmodule
